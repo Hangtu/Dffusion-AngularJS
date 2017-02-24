@@ -1,0 +1,88 @@
+a {
+  text-decoration: none;
+}
+.centrar-texto{
+	text-align: center;
+}
+
+.footer-item-input-insert {
+    position: inherit;
+}
+
+.img-circle {
+    border-radius: 5px;
+}
+
+.redonda {
+    border-radius: 50%;
+}
+
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 110px;
+    width: 110px;
+}
+ 
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+ 
+.transparent {
+   background: #000;
+}
+ 
+.slider {
+    width: 100%;
+    height: 100%;
+}
+ 
+.image {
+    width: 100%;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-color: #000;
+}
+
+.imagenes { 
+    margin:0 auto;
+    display:inline-block;
+    text-align: center;
+}
+
+  .background-gray.scroll-content {
+     background-color:#eee;
+  }
+
+  .background-black.scroll-content {
+     background-color:#000;
+  }
+
+  .background-about.scroll-content {
+
+    background-image: url('../img/acerca.jpg');
+    background-size: 75%, 75%;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-position: center, center; 
+    
+  }
+
+
+  .background-image{
+     width:150px;
+     height:150px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto
+  }
+
+.imagenMomento{
+  max-height: 120px; 
+  max-width: 120px; 
+  text-align: center;
+}

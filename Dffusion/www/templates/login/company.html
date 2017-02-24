@@ -1,0 +1,102 @@
+<ion-view view-title="" cache-view="false">
+
+    <ion-nav-buttons side="right">
+        <a class="right button button-icon icon ion-gear-a" ng-href="#/tab/changes/{{idempresa}}"></a>
+    </ion-nav-buttons>
+
+    <ion-content class="padding" > 
+
+<div class="card">
+  <div class="item item-text-wrap text-center">
+      <img  style="width:50px" ng-src="http://www.newdifusion.com/androidDevelopers/system/{{carpeta}}/img/profile.png?{{dato2}}" alt="">
+        <h2>{{nombre}}</h2>
+        <p>Disponible</p>
+  </div>
+</div>
+
+
+
+      <div class="list">
+        <label class="item item-input">
+          <textarea placeholder="Escribe algo para compartir aqui..." rows="6" ng-model="moment.momento"></textarea>
+        </label>
+      </div>
+
+    <div class="row">
+     <div class="col">
+      <div ng-show="show" class="imagenMomento item-image">
+       <img  class="imagenMomento" ng-src="{{imagens}}?{{dato2}}"/>
+      </div>
+     </div>
+    </div>
+
+<div class="row">
+  <div class="col">
+     <button class="button icon-left ion-camera button-positive" ng-click="escoger()">
+        Añadir imagen
+     </button>
+    <button class="button icon-left ion-checkmark button-stable" ng-click="subirMomento(moment)">
+        Publicar
+   </button>
+  </div>
+</div>
+
+
+     <ion-list>
+
+          <ion-item 
+             class="item item-thumbnail-left item-text-wrap" 
+              ng-click="empresaPhoto()">
+             <img ng-src="img/perfil.png">
+             <h2>Cambiar foto de perfil</h2>
+          </ion-item>
+
+          <ion-item 
+             class="item item-thumbnail-left item-text-wrap" 
+              ng-click="uploadPhoto()">
+             <img ng-src="img/galeria.png">
+             <h2>Agrega una imagen a tu galería</h2>
+          </ion-item>
+
+    </ion-list>
+
+
+<div class="list card" ng-repeat="dato in items">
+
+  <div class="item item-avatar-right">
+    <img src="http://www.newdifusion.com/androidDevelopers/system/{{dato.carpeta}}/img/profile.png?{{dato2}}">
+    <h2>{{dato.nombre}}</h2>
+    <p>Publicado {{dato.fechaPublicacion}}</p>
+    <p ng-click="eliminarMomento(dato.idmomento)"><b>Eliminar publicación</b></p>
+  </div>
+
+  <div class="item item-body">
+   <img ng-if="dato.imagenM" class="full-image" src="http://www.newdifusion.com/androidDevelopers/system/{{dato.carpeta}}/momento/{{dato.imagenM}}">
+    <p>{{dato.descripcionM}}</p>
+    <p>
+      <a  class="subdued">{{dato.likeCount}} Me gusta</a>
+      <a  class="subdued">{{dato.contador}} Comentarios</a>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left tabs-stable">
+    <a class="tab-item" ng-click="like($index,{{dato.idmomento}})">
+      <i class="icon ion-happy{{dato.color}}"></i>
+       Me gusta
+    </a>
+     <a class="tab-item" ng-click="openModalComentarios($index,{{dato.idmomento}})">
+      <i class="icon ion-chatbox"></i>
+      Comentar
+    </a>
+    <a class="tab-item" ng-click="compartir(dato.descripcionM, dato.carpeta,dato.imagenM)">
+          <i class="icon ion-share"></i>
+           Compartir
+    </a>
+  </div>
+</div>
+  <ion-infinite-scroll on-infinite="loadMore()" 
+    distance="5%"
+    ng-if="moreDataCanBeLoaded()">
+  </ion-infinite-scroll> 
+</ion-content>
+</ion-view>

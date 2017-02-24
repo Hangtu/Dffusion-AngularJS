@@ -1,0 +1,8 @@
+<!--Galeria de imagenes vista sin modal -->
+<ion-view view-title="" cache-view="true">
+    <ion-content>
+        <div class="imagenes">
+             <img ng-repeat="image in allImages" ng-src="http://www.newdifusion.com/androidDevelopers/system/{{carpeta}}/img/{{image}}" ng-click="showImages($index,image)" class="image-list-thumb"/>
+            </div>   
+    </ion-content>
+</ion-view>

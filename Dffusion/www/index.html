@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+    
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/momento.js"></script>
+    <script src="js/categorias.js"></script>
+    <script src="js/cuenta.js"></script>
+    <script src="js/opciones.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/empresa.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/services/factories.js"></script>
+ 
+  </head>
+
+  <body ng-app="dffusion">
+  <ion-nav-bar class="bar bar-positive">
+        <ion-nav-back-button hide-back-button="false">Regresar
+       </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <!-- where the initial view template will be rendered -->
+  <ion-nav-view>
+    <ion-view>
+    </ion-view>
+  </ion-nav-view>
+
+
+
+    <script id="comentarios.html" type="text/ng-template">
+       <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-stable fix-buttons" on-swipe-down="closeModalComentarios()">
+        <h1 class="title">Comentarios</h1>         
+        </ion-header-bar>
+        <ion-content>
+         <div class="list">
+            <a class="item item-avatar item-text-wrap" ng-repeat="item in comentario">
+              <img src="img/profile.png">
+              <p>{{item.comentario}}</p>
+            </a>
+        </div> 
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col">{{cargando}}</div>
+          <div class="col"></div>
+        </div>
+        
+        </ion-content>
+
+        <ion-footer-bar  class="bar-light item-input-inset footer-item-input-insert">
+         <label class="item-input-wrapper">
+         <i class="icon ion-ios-ion-checkmark-empty placeholder-icon"></i>
+          <input type="text" placeholder="Escribe un comentario" ng-model="user.comentario">
+           </label>
+         <button class="button button-clear" ng-click="sendMsg(user.comentario)">
+          Enviar
+         </button>
+        
+        </ion-footer-bar>
+      </ion-modal-view>
+    </script>
+
+  </body>
+</html>

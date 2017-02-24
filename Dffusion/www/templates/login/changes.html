@@ -1,0 +1,82 @@
+<ion-view view-title="">
+<ion-content>
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Nombre</span>
+    <input type="text" placeholder="Mi empresa" ng-model="empresa.name">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Domicilio</span>
+    <input type="text" ng-model="empresa.address" placeholder="Calle Higuel # 34 Col. Terminal">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Teléfono</span>
+    <input type="tel" ng-model="empresa.tel" placeholder="311234567">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Descripción</span>
+   <textarea type="text" placeholder="Esta empresa se dedica a..." ng-model="empresa.desc" rows="5"> </textarea>
+  </label>
+  <h5 class="text-center">Horarios</h5> 
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Apertura</span>
+    <input type="time" placeholder="7:00 AM" ng-model="empresa.open">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Cierre</span>
+    <input type="time" placeholder="9:00 PM" ng-model="empresa.close" >
+  </label>
+  </div>
+  <h5 class="text-center">Días de servicio</h5> 
+  <ul class="list">
+  <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.mon" ng-true-value="'Lunes'"  ng-false-value="'0'">
+     </label>
+       Lunes
+  </li>
+    <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.tue" ng-true-value="'Martes'"  ng-false-value="'0'">
+     </label>
+       Martes
+  </li>
+    <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.wen" ng-true-value="'Miercoles'"  ng-false-value="'0'">
+     </label>
+       Miércoles
+  </li>
+      <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.thu" ng-true-value="'Jueves'"  ng-false-value="'0'">
+     </label>
+       Jueves
+  </li>
+      <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.fri" ng-true-value="'Viernes'"  ng-false-value="'0'">
+     </label>
+       Viernes
+     </li>
+    <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.sat" ng-true-value="'Sabado'"  ng-false-value="'0'">
+     </label>
+       Sábado
+    </li>
+    <li class="item item-checkbox checkbox-balanced">
+     <label class="checkbox">
+       <input type="checkbox" ng-model="empresa.sun" ng-true-value="'Domingo'"  ng-false-value="'0'">
+     </label>
+       Domingo
+  </li>
+</ul>
+
+ <button class="button button-block button-positive" ng-click="guardar(empresa)">
+  Guardar cambios
+ </button>
+
+
+</ion-content>
+</ion-view>

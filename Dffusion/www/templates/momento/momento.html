@@ -1,0 +1,58 @@
+<ion-view view-title="Momentos {{ciudad}}" cache-view="false">
+  
+  <ion-content class="background-gray">
+    
+
+    <ion-refresher
+      pulling-text="Recargando..."
+      on-refresh="doRefresh()"
+      pulling-icon="ion-arrow-up-c">
+    </ion-refresher>
+  
+  <div class="list card" ng-repeat="dato in items">
+      <!--Cabecera-->
+      <div class="item item-avatar-right">
+        <img ng-src="http://www.newdifusion.com/androidDevelopers/system/{{dato.carpeta}}/img/profile.png?{{dato2}}">
+         <a ng-href="#/tab/momento/{{dato.fk_empresa}}">
+           <h2>{{dato.nombre}}</h2>     
+           <p>Publicado {{dato.fechaPublicacion}}</p>
+        </a>
+      </div>
+      
+      <!--Cuerpo-->
+      <div class="item item-body">
+       <img class="full-image" ng-if="dato.imagenM" ng-click="showImages(dato.carpeta,dato.imagenM)"  ng-src="http://www.newdifusion.com/androidDevelopers/system/{{dato.carpeta}}/momento/{{dato.imagenM}}">
+        <p>{{dato.descripcionM}}</p>
+        <p>
+          <a  class="subdued">{{dato.likeCount}} Me gusta</a>
+          <a  class="subdued">{{dato.contador}} Comentarios</a>
+        </p>
+      </div>
+     
+     <!--Pie-->
+      <div class="item tabs tabs-secondary tabs-icon-left tabs-stable">
+        <a class="tab-item" ng-click="like($index,{{dato.idmomento}})">
+          <i class="icon ion-happy {{dato.color}}"></i>
+          Me gusta
+        </a>
+        <a class="tab-item" ng-click="openModalComentarios($index,{{dato.idmomento}})">
+          <i class="icon ion-chatbox"></i>
+          Comentar
+        </a>
+         <a class="tab-item" ng-click="compartir(dato.descripcionM, dato.carpeta,dato.imagenM)">
+          <i class="icon ion-share"></i>
+           Compartir
+        </a>
+      </div>
+  
+  </div>
+
+    
+   <!--Scrolling down-->
+   <ion-infinite-scroll on-infinite="loadMore()"
+     distance="5%"
+     ng-if="moreDataCanBeLoaded()">
+   </ion-infinite-scroll> 
+
+  </ion-content>
+</ion-view>

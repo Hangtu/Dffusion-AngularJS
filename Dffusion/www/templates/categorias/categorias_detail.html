@@ -1,0 +1,22 @@
+<ion-view view-title="" cache-view="true">
+    
+   <ion-content>
+	    
+      <!--Lista de empresas-->
+       <ion-list>
+          <ion-item ng-repeat="item in items" class="item item-thumbnail-left item-text-wrap" ng-href="#/tab/empresa/{{item.idempresa}}">
+           <img class="img-circle" ng-src="http://www.newdifusion.com/androidDevelopers/system/{{item.carpeta}}/img/profile.png?{{dato}}">
+           <h2>{{item.nombre}}</h2>
+           <p>{{item.disponible}}</p>
+            {{setRaiting(item.star)}}
+           <i ng-repeat="arr in star" class="icon {{arr.icon}} assertive"> </i>
+          </ion-item>
+       </ion-list>
+
+   <ion-infinite-scroll on-infinite="loadMore()"
+     distance="5%"
+     ng-if="moreDataCanBeLoaded()">
+   </ion-infinite-scroll> 
+  
+  </ion-content>
+</ion-view>

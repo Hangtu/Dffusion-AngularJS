@@ -1,0 +1,84 @@
+<ion-view view-title="Bienvenido" cache-view="true">
+
+    <ion-nav-buttons side="right">
+        <a ng-hide="view2" ng-click="exit()" class="right button button-icon icon ion-android-exit"></a>
+    </ion-nav-buttons>
+
+
+ <ion-content>
+
+        
+        <div ng-hide="view">
+          <div class="list padding hangtu">
+            <label class="item item-input">
+              <input type="email" placeholder="Email" ng-model="user.email">
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Contraseña" ng-model="user.password">
+            </label>
+          </div>
+
+          <div class="padding">
+
+            <button class="button button-block button-stable" ng-click="signIn(user)">
+              Iniciar sesión
+            </button>
+
+            <a ng-href="#/tab/registro">
+               <button class="button button-block button-positive">Registrarse</button>
+            </a>
+          
+        </div>
+      </div>
+
+
+  <div ng-hide="view2" class="padding">
+
+<div class="card" ng-repeat="item in items">
+  <a  ng-href="#/tab/company/{{item.idempresa}}" on-hold="onHold(item.idempresa)">
+  <div class="item item-text-wrap text-center">
+      <img style="width:50px" ng-src="http://www.newdifusion.com/androidDevelopers/system/{{item.carpeta}}/img/profile.png?{{dato}}">
+      <h2>{{item.nombre}}</h2>
+  </div>
+ </a>
+</div>
+
+
+<div class="card">
+  <div class="item item-text-wrap text-center">
+      <img src="img/session.png" alt="">
+        <p>Gana mas dinero promocionando tu empresa</p>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="item item-text-wrap text-center">
+      <img src="img/up.png" alt="">
+        <p>Publica y comparte tus productos o servicios para mejorar tus ganancias</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="item item-text-wrap text-center">
+      <img src="img/share.png" alt="">
+        <p>Recomiendanos con amigos y conocidos, así mas personas podrán ver tus anuncios</p>
+  </div>
+</div>
+
+
+
+  <a ng-href="#/tab/create">
+           <button class="button button-block button-positive">
+            Crear una empresa
+          </button>
+  </a> 
+  
+</div>
+
+
+     <div class="row" >
+       <img  class="background-image" src="img/fondo.jpg" alt="">
+    </div>
+</ion-content>
+</ion-view>
